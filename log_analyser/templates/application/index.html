@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="col-md-6 mx-auto border rounded" style="margin-top: 2%; background-color: #f8f8f8;">
+            <form action="{% url 'application:newLog' %}" method="POST" enctype="multipart/form-data" class="container p-3" >
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <h3 class="mt-2">Choisissez votre fichier Log</h3>
+                    <input type="file" class="form-control" name="fileInput" id="fileInput"/>
+                </div>
+
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </form>
+        </div>
+{% endblock %}

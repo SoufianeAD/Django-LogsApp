@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-md-8 mx-auto border rounded" style="margin-top: 2%; background-color: #f8f8f8;">
+        <form action="{% url 'application:filter' %}" method="POST" class="container p-3" >
+            {% csrf_token %}
+
+            <div class="form-group">
+                <h5 class="mt-2">Key</h5>
+                <input type="text" class="form-control" name="key" />
+            </div>
+
+            <div class="text-center m-3">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mt-3 text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   <td>Content</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in content %}
+                        <tr><td>{{ item }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Django</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        {% load static %}
+    </head>
+    <body class="bg-light">
+         <div class="container mt-5" >
+            <div class="row">
+                <div class="container">
+                    <div class="">
+                        <h1>Log Analyser</h1>
+                    </div>
+
+                    <div class="container border mt-3">
+                    </div>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
